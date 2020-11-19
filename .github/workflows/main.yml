@@ -29,8 +29,15 @@ jobs:
         uses: actions/setup-node@v2-beta
         with:
           node-version: ${{ matrix.node-version }}
+      # install yarn
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
+      # Build Rect App with yarn
+      - name: build react app
+        run: yarn build
       # Runs a set of commands using the runners shell
       - name: Installing surge
         run: npm install --global surge
       - name: deploying using surge
-        run: surge /home/mubi/Documents/GitHub/project2-class3/build http://project2-class3.surge.sh/ --token ${{ secrets.SURGE_TOKENPRO2 }}
+        run: surge ./build http://project2-class3.surge.sh/ --token ${{ secrets.SURGE_TOKENPRO2 }}
