@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Courses from './courses.js';
-import Dinner from './Dinner';
+import Dinner from './Dinner.js';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
         <h1>Hello Programmers of PIAIC</h1>
         <hr color='white'/> 
         <h5><Courses courseName="AIC & BC"/></h5> 
-        <h7><Dinner cooking="pasta"/></h7>
+        <h5><Dinner cooking="pasta"/></h5>
         </header>
     </div>
   );
